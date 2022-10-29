@@ -6,24 +6,9 @@
 function addToDo(event) {
   event.preventDefault();
 
-  const formData = new FormData(event.target);
-  var formObject = {};
-  formData.forEach(function (value, key) {
-    formObject[key] = value;
-  });
-
-  /**
-   * formObject is now in the following format:
-   {
-    "title": "your title here",
-    "description": "your description here"
-   }
-   so you can use formObject.title, formObject.description to get the title and description from the form
-   */
-
   /**
    * Put your code below to create a new TODO HTML block,
-   * add the appropriate data, and add it to the DOM.
+   * get the appropriate data from the form, and add it to the DOM.
    */
 }
 
