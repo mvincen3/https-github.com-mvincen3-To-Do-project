@@ -26,3 +26,15 @@ Remove TODOs from the list:
 The layout for the project should look like below:
 
 ![](https://github.com/ewlahay/ToDoList_Project/blob/main/illustrations/addMultiple.gif)
+
+## Notes
+
+- Clicking the X icon should remove the TODO block
+- Clicking anywhere else on the block should toggle the status of that TODO
+- Blocks should be of equal size. If text is too long to show, it should be cut off.
+
+## Hints:
+
+- Use the CSS box-shadow property to give your TODO blocks more depth.
+  - Increase the shadow size on hover to give a popup effect
+- The form element has an event that is triggered when you click on the submit button
