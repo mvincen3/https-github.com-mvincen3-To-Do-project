@@ -20,7 +20,7 @@ function addToDo(event) {
  * @param event the onclick event
  */
 function toggleToDo(event) {
-  let targetElement = getRootElement(event.originalTarget);
+  let targetElement = getRootElement(event.currentTarget);
 
   //Your code here
 }
@@ -32,7 +32,7 @@ function toggleToDo(event) {
 function removeToDo(event) {
   event.preventDefault();
   event.stopPropagation();
-  let todoElement = getRootElement(event.originalTarget);
+  let todoElement = getRootElement(event.currentTarget);
 
   //Your code here
 }
