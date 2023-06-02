@@ -17,18 +17,17 @@ function addToDo(event) {
   let descriptionElement = document.createElement('p');
   descriptionElement.textContent = description;
 
-  // Create remove button element
   let removeButton = document.createElement('button');
   removeButton.textContent = 'X';
   removeButton.classList.add('remove-button');
   removeButton.addEventListener('click', removeToDo);
 
-  // Append the elements to the TODO block
+ 
   todoBlock.appendChild(titleElement);
   todoBlock.appendChild(descriptionElement);
   todoBlock.appendChild(removeButton);
 
-  // Add the TODO block to the DOM
+
   let todoContainer = document.getElementById('todo-container');
   todoContainer.appendChild(todoBlock);
 
