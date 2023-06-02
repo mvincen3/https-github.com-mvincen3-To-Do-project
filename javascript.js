@@ -1,5 +1,4 @@
-/**
- * Function that should add a TODO HTML block to the DOM using
+Function that should add a TODO HTML block to the DOM using
  * the appropriate data from the form when the form is submitted
  * @param event form submit event
  */
@@ -10,7 +9,34 @@ function addToDo(event) {
    * Put your code below to create a new TODO HTML block,
    * get the appropriate data from the form, and add it to the DOM.
    */
+  let title = document.getElementById('title').value;
+  let description = document.getElementById('description').value;
+  
+  let todoBlock = document.createElement('div');
+  todoBlock.classList.add('todo');
+  let descriptionElement = document.createElement('p');
+  descriptionElement.textContent = description;
+
+  // Create remove button element
+  let removeButton = document.createElement('button');
+  removeButton.textContent = 'X';
+  removeButton.classList.add('remove-button');
+  removeButton.addEventListener('click', removeToDo);
+
+  // Append the elements to the TODO block
+  todoBlock.appendChild(titleElement);
+  todoBlock.appendChild(descriptionElement);
+  todoBlock.appendChild(removeButton);
+
+  // Add the TODO block to the DOM
+  let todoContainer = document.getElementById('todo-container');
+  todoContainer.appendChild(todoBlock);
+
+
+  document.getElementById('title').value = '';
+  document.getElementById('description').value = '';
 }
+
 
 /**
  * Method to add a class that marks the TODO as
@@ -23,6 +49,7 @@ function toggleToDo(event) {
   let targetElement = getRootElement(event.currentTarget);
 
   //Your code here
+  targetElement.classList.toggle('completed');
 }
 
 /**
@@ -35,6 +62,7 @@ function removeToDo(event) {
   let todoElement = getRootElement(event.currentTarget);
 
   //Your code here
+  todoElement.remove();
 }
 
 /**
@@ -52,3 +80,5 @@ function getRootElement(element) {
   }
   return targetElement;
 }
+var submitButton = document.getElementById('submit-button');
+    submitButton.addEventListener('click', addToDo);
