@@ -15,7 +15,7 @@ function addToDo(event) {
   const title = document.getElementsById('title');
   const description = document.getElementsById('description');
   
- 
+}
 
 /**
  * Method to add a class that marks the TODO as
