@@ -1,5 +1,5 @@
 /**
-Function that should add a TODO HTML block to the DOM using
+ * Function that should add a TODO HTML block to the DOM using
  * the appropriate data from the form when the form is submitted
  * @param event form submit event
  */
@@ -11,27 +11,53 @@ function addToDo(event) {
    * get the appropriate data from the form, and add it to the DOM.
    */
   const todoBlock = document.createElement('div');
-  todoBlock.classList.add('todo')
-  const title = document.getElementsById('title');
-  const description = document.getElementsById('description');
+  todoBlock.classList.add('todo');
   
+  const title = document.getElementById('title').value;
+  const description = document.getElementById('description').value;
+
+  const todoTitle = document.createElement('h2');
+  todoTitle.textContent = title;
+
+  const todoDescription = document.createElement('p');
+  todoDescription.textContent = description;
+
+  const todoButtons = document.createElement('div');
+  todoButtons.classList.add('buttons');
+
+  const completeButton = document.createElement('button');
+  completeButton.textContent = 'Complete';
+  completeButton.addEventListener('click', toggleToDo);
+
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'Remove';
+  removeButton.addEventListener('click', removeToDo);
+
+  todoButtons.appendChild(completeButton);
+  todoButtons.appendChild(removeButton);
+
+  todoBlock.appendChild(todoTitle);
+  todoBlock.appendChild(todoDescription);
+  todoBlock.appendChild(todoButtons);
+
+  const todoList = document.getElementById('todo-list');
+  todoList.appendChild(todoBlock);
+
+  // Reset the form
+  event.target.reset();
 }
 
 /**
  * Method to add a class that marks the TODO as
- * completed, ie greyed out when TODO block is clicked. If
- * block is already completed (ie clicked before), then it
+ * completed, i.e., greyed out when the TODO block is clicked.
+ * If the block is already completed (i.e., clicked before), then it
  * should remove the class.
  * @param event the onclick event
  */
 function toggleToDo(event) {
   let targetElement = getRootElement(event.currentTarget);
 
-  //Your code here
   targetElement.classList.toggle('completed');
-  targetElement.addEventListener('click', toggleToDo);
-  targetElement.remove();
-
 }
 
 /**
@@ -43,7 +69,6 @@ function removeToDo(event) {
   event.stopPropagation();
   let todoElement = getRootElement(event.currentTarget);
 
-  //Your code here
   todoElement.remove();
 }
 
@@ -56,9 +81,11 @@ function removeToDo(event) {
 function getRootElement(element) {
   let targetElement = element;
   while (targetElement && !targetElement.classList.contains("todo")) {
-    targetElement = targetElement.parent
-      ? targetElement.parent
-      : targetElement.parentElement;
+    targetElement = targetElement.parentElement;
   }
   return targetElement;
 }
+
+// Add event listener to the form submit
+const form = document.getElementById('todo-form');
+form.addEventListener('submit', addToDo);
