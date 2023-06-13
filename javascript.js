@@ -43,7 +43,7 @@ function addToDo(event) {
   const todoList = document.getElementById('todo-list');
   todoList.appendChild(todoBlock);
 
-  // Reset the form
+
   event.target.reset();
 }
 
@@ -86,6 +86,6 @@ function getRootElement(element) {
   return targetElement;
 }
 
-// Add event listener to the form submit
+
 const form = document.getElementById('todo-form');
 form.addEventListener('submit', addToDo);
