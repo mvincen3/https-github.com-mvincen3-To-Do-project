@@ -1,3 +1,4 @@
+/* Example CSS for the TODO blocks */
 .todo {
   width: 400px;
   padding: 16px;
@@ -6,8 +7,27 @@
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s;
+  border: 1px solid #ccc;
 }
 
 .todo:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.todo h2 {
+  margin: 0;
+}
+
+.todo p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.todo.completed {
+  background-color: #eee;
+  text-decoration: line-through;
+}
+
+.buttons button {
+  margin-right: 5px;
 }
