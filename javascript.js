@@ -3,6 +3,7 @@
  * the appropriate data from the form when the form is submitted
  * @param event form submit event
  */
+document.addEventListener ('DOMContentLoaded', function() {
 function addToDo(event) {
   event.preventDefault();
 
@@ -89,3 +90,4 @@ function getRootElement(element) {
 
 const form = document.getElementById('todo-form');
 form.addEventListener('submit', addToDo);
+ });
