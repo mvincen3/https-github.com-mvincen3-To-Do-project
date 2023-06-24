@@ -56,9 +56,6 @@
   font-size: 26px;
 }
 
-.todo .buttons button:focus {
-  outline: none;
-}
 #title {
   
   width: 200%;
