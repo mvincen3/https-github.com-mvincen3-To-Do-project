@@ -1,33 +1,58 @@
-/* Example CSS for the TODO blocks */
+.todo-form,
+.todo-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to a new line */
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .todo {
+  background-color: #fff;
+  padding: 20px;
   width: 400px;
-  padding: 24px;
+  height: 200px;
   margin-bottom: 20px;
-  background-color: #f2f2f2;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   transition: box-shadow 0.3s;
-  border: 1px solid #ccc;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative; /* Add position relative */
+}
+
+.todo .remove-button {
+  position: absolute; /* Position remove button */
+  top: 20px;
+  right: 20px;
+  background: grey;
+  border: black;
+  cursor: pointer;
+  font-size: 36px;
 }
 
 .todo:hover {
-  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.4);
-}
-
-.todo h2 {
-  margin: 0;
-}
-
-.todo p {
-  margin-top: 5px;
-  margin-bottom: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .todo.completed {
-  background-color:lightgrey;
-  text-decoration: line-through;
+  opacity: 0.5;
+  background-color: #888 ;
 }
 
-.buttons button {
-  margin-right: 5px;
+.todo .buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
 }
+
+.todo .buttons button:focus {
+  outline: none;
+}
+
+
