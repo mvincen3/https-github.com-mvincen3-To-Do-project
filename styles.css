@@ -1,7 +1,12 @@
-.todo-form,
+.todo-form{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content:flex-start ;
+}
 .todo-container {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to a new line */
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -22,11 +27,11 @@
   transition: box-shadow 0.3s;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  position: relative; /* Add position relative */
+  position: relative;
 }
 
 .todo .remove-button {
-  position: absolute; /* Position remove button */
+  position: absolute; 
   top: 20px;
   right: 20px;
   background: grey;
@@ -54,5 +59,66 @@
 .todo .buttons button:focus {
   outline: none;
 }
+#title {
+  
+  width: 200%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+label[for="title"] {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#description {
+
+  width: 200%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+label[for="description"] {
+  display: block;
+  margin-bottom: 5px;
+}
+#todo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; 
+}
+#todo-form button[type="submit"] {
+  width: 210%;
+  padding: 10px;
+  border: none;
+  background-color: blue;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.todo-header button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+
 
 
