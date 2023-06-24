@@ -41,7 +41,7 @@
 }
 
 .todo:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(223, 23, 23, 0.3);
 }
 
 .todo.completed {
