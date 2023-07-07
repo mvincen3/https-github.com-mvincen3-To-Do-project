@@ -8,28 +8,28 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="javascript.js"></script>
+    
   </head>
   <body>
     <div>
       <h1>My #TODO List</h1>
     </div>
     <div class="todo-form">
-      <form>
+      <form id = "todo-form">
         <label for="title">Title</label>
-        <input type="text" name="title" minlength="3" />
+        <input type="text" name="title" id="title" minlength="3" />
 
         <label for="description">Description</label>
-        <textarea name="description" minlength="3"></textarea>
+        <textarea name="description" id = "description" minlength="3"></textarea>
 
         <button type="submit">Add TODO</button>
       </form>
     </div>
-    <div class="todo-container" id="todo-container">
-      <div class="todo" onclick="">
+    <div class="todo-container" id="todo-list">
+      <div class="todo" onclick="toggleToDo(event)">
         <div class="todo-header">
           <h2>Create TODO project</h2>
-          <button aria-label="delete item" onclick="">X</button>
+          <button aria-label="delete item" onclick="removeToDo(event)">X</button>
         </div>
         <div class="todo-description">
           I want to create a project for justice redeemed that uses JavaScript,
@@ -38,5 +38,6 @@
         </div>
       </div>
     </div>
+    <script src="javascript.js"></script>
   </body>
 </html>
